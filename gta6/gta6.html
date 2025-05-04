@@ -8,7 +8,7 @@
     * {
       box-sizing: border-box;
     }
-
+    
     body {
       background: linear-gradient(135deg, #4d0c69, #1e1e1e); /* Neon gradient without pink */
       color: #fff;
@@ -68,15 +68,24 @@
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem; /* Adjusted margin */
+    }
+
+    .release-date {
+      font-size: 1.5rem; /* Smaller font size */
+      font-weight: bold;
+      color: #ff66cc;
+      text-shadow: 0 0 5px rgba(255, 102, 204, 0.7), 0 0 10px rgba(255, 102, 204, 0.7), 0 0 15px rgba(255, 102, 204, 0.7);
+      margin-top: 0.5rem; /* Added space between heading and release date */
     }
 
     .countdown {
       font-size: 2rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem; /* Increased gap between countdown elements */
       flex-wrap: wrap;
+      margin-top: 2rem; /* Added margin to push countdown further down */
     }
 
     .time-box {
@@ -94,6 +103,12 @@
 
     .time-box:hover {
       transform: scale(1.05);
+    }
+
+    .time-box div {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
     }
 
     .time-box span {
@@ -130,6 +145,9 @@
   <div id="main-content">
     <img class="logo" src="files/gta6.png" alt="GTA 6 Logo">
     <h1>Live Countdown to GTA 6 Release</h1>
+
+    <!-- Release Date with Smaller Font Size and Adjusted Spacing -->
+
 
     <div class="countdown" id="countdown">
       <div class="time-box"><div id="days">0</div><span>Days</span></div>
