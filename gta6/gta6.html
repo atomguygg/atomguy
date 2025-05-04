@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GTA 6 Countdown</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #9400d3, #1e1e1e); /* Neon gradient without pink */
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    /* Splash screen styles */
+    #splash {
+      position: fixed;
+      background: #000;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #splash img {
+      max-width: 300px;
+      animation: fadeSplash 2s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeSplash {
+      to {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    #main-content {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      opacity: 0;
+      animation: fadeInSlow 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeInSlow {
+      to {
+        opacity: 1;
+      }
+    }
+
+    img.logo {
+      max-width: 300px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .countdown {
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: rgba(0, 0, 0, 0.6); /* Semi-transparent black box */
+      width: 120px;
+      height: 120px;
+      padding: 1rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    .time-box:hover {
+      transform: scale(1.05);
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 0.3rem;
+      color: #ff66cc;
+    }
+
+    /* Background Palm Tree & City Vibe */
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('files/bg.jpg') center/cover no-repeat; /* Local image in images folder */
+      opacity: 0.2;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Miami Vibe -->
+  <div class="background-image"></div>
+
+  <!-- Splash screen -->
+  <div id="splash">
+    <img src="files/gta6.png" alt="GTA 6 Logo">
+  </div>
+
+  <!-- Main content -->
+  <div id="main-content">
+    <img class="logo" src="files/gta6.png" alt="GTA 6 Logo">
+    <h1>Live Countdown to GTA 6 Release</h1>
+
+    <div class="countdown" id="countdown">
+      <div class="time-box"><div id="days">0</div><span>Days</span></div>
+      <div class="time-box"><div id="hours">0</div><span>Hours</span></div>
+      <div class="time-box"><div id="minutes">0</div><span>Minutes</span></div>
+      <div class="time-box"><div id="seconds">0</div><span>Seconds</span></div>
+    </div>
+  </div>
+
+  <script>
+    // Show splash then fade in main content
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+        const main = document.getElementById("main-content");
+        main.style.display = "flex";
+      }, 2500);
+    });
+
+    // Countdown logic
+    const countdown = () => {
+      const releaseDate = new Date("May 26, 2026 00:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = releaseDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "<h2>GTA 6 is Out Now!</h2>";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    };
+
+    countdown();
+    setInterval(countdown, 1000);
+  </script>
+
+</body>
+</html>
