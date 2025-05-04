@@ -68,15 +68,16 @@
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 1rem; /* Adjusted margin */
+      margin-bottom: 0.5rem; /* Reduced margin */
     }
 
+    /* Updated release date style without neon effect */
     .release-date {
       font-size: 1.5rem; /* Smaller font size */
       font-weight: bold;
-      color: #ff66cc;
-      text-shadow: 0 0 5px rgba(255, 102, 204, 0.7), 0 0 10px rgba(255, 102, 204, 0.7), 0 0 15px rgba(255, 102, 204, 0.7);
-      margin-top: 0.5rem; /* Added space between heading and release date */
+      color: #ff66cc;  /* Retain pink color */
+      margin-top: 0; /* Removed space */
+      text-shadow: none; /* Removed neon text-shadow */
     }
 
     .countdown {
@@ -146,8 +147,8 @@
     <img class="logo" src="files/gta6.png" alt="GTA 6 Logo">
     <h1>Live Countdown to GTA 6 Release</h1>
 
-    <!-- Release Date with Smaller Font Size and Adjusted Spacing -->
-
+    <!-- Release Date without neon effect -->
+    <div class="release-date">Release Date: May 26, 2026</div>
 
     <div class="countdown" id="countdown">
       <div class="time-box"><div id="days">0</div><span>Days</span></div>
