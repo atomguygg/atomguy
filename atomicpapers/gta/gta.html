@@ -164,7 +164,24 @@
                 <div class="button-group filters-button-group bordered-filter dark-mode bg-body-dark text-center">
           <h1>GTA COLLECTIONS</h1>
                 </div>
+ <div class="main-container p-0">
 
+        <section id="portfolio" class="p-0">
+            <div class="container-fluid p-0">
+                <div class="button-group filters-button-group bordered-filter dark-mode bg-body-dark text-center">
+                    <button class="btn filter-btn is-checked" data-filter="*">All</button>
+                    <button class="btn filter-btn" data-filter=".design">Cars</button>
+                    <button class="btn filter-btn" data-filter=".web-design">Games</button>
+                    <button class="btn filter-btn" data-filter=".branding">Superhero</button>
+                    <button class="btn filter-btn" data-filter=".branding">Motivation</button>
+                    <button class="btn filter-btn" data-filter=".branding">Combo</button>
+                    <button class="btn filter-btn" data-filter=".branding">Motivation</button>
+                    <button class="btn filter-btn" data-filter=".branding">Motivation</button>
+                    <button class="btn filter-btn" data-filter=".branding">Motivation</button>
+                    <button class="btn filter-btn" data-filter=".branding">Motivation</button>
+                    <button class="btn filter-btn" data-filter=".branding">Motivation</button>
+
+                </div><!-- /  filters-button-group -->
     <div class="main-container p-0">
 
         <section id="portfolio" class="p-y-20">
@@ -197,26 +214,27 @@
                         <h5 class="text-center mt-2" style="opacity: 0.8;">GTA COMBO</h5>
                     </div><!-- / column -->
 
-                    <div class="col-md-6 col-xl-3">
-                        <div class="project">
-                            <figure class="portfolio-item">
-                                <div class="hovereffect effect-overlay">
-                                  
-                                    <img class="img-responsive" src="images/ph1.jpg" alt="">
-                                    <div class="overlay">
-                                        <div class="hovereffect-title">
-                                            <a href="images/ph1.jpg" class="project-title-wrapper gallery-lightbox">
-                                                <div class="overlay-icon">
-                                                      <H2>GTA 6</H2>
-                                                </div><!-- / overlay-icon -->
-                                            </a><!-- / project link -->
-                                        </div><!-- / hovereffect-title -->
-                                    </div><!-- / overlay -->
-                                </div><!-- / hovereffect -->
-                            </figure><!-- / portfolio-item -->
-                        </div><!-- / project -->
-                        <h5 class="text-center mt-2" style="opacity: 0.8;">GTA 6</h5>
-                    </div><!-- / column -->
+                    <div class="col-md-6 col-xl-3 .web-design">
+    <div class="project">
+        <figure class="portfolio-item">
+            <div class="hovereffect effect-overlay">
+                <img class="img-responsive" src="images/ph1.jpg" alt="">
+                <div class="overlay">
+                    <div class="hovereffect-title">
+                        <a href="images/ph1.jpg" class="project-title-wrapper gallery-lightbox">
+                            <div class="overlay-icon">
+                                  <H2>GTA 6</H2>
+                                  <p class="project-skill">web-design</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </figure>
+    </div>
+    <h5 class="text-center mt-2" style="opacity: 0.8;">GTA 6</h5>
+</div>
+
 
                     <div class="col-md-6 col-xl-3">
                         <div class="project">
@@ -475,6 +493,31 @@
         });
     </script>
     <!-- / GLightbox -->
+    <!-- Core JavaScript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme.js"></script>
+
+    <!-- Isotope -->
+    <script src="js/isotope.min.js"></script>
+    <script src="js/isotope-filter.js"></script>
+    <!-- / Isotope -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<script>
+  // init Isotope
+  var $grid = $('.row').isotope({
+    itemSelector: '.col-md-6', // or '.project' depending on your structure
+    layoutMode: 'fitRows'
+  });
+
+  // bind filter button click
+  $('.filters-button-group').on('click', 'button', function() {
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+    $('.filters-button-group button').removeClass('is-checked');
+    $(this).addClass('is-checked');
+  });
+</script>
 
 
 </body></html>
