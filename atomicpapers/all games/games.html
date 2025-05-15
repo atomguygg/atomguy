@@ -1575,6 +1575,9 @@
                         <h5 class="text-center mt-2" style="opacity: 0.8;">RDR #34</h5>
                     </div>                
                          
+<div class="col-12 text-center mt-4">
+    <button id="loadMore" class="btn btn-primary px-5 py-2">Load More</button>
+</div>
 
                     
                 </div>
@@ -1685,71 +1688,30 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll(".filter");
-  const allItems = document.querySelectorAll(".gallery-item");
-  const gallery = document.getElementById("gallery");
+    document.addEventListener("DOMContentLoaded", function () {
+        let items = document.querySelectorAll(".project-item, [data-category]");
+        let visibleCount = 8;
 
-  let currentFilter = "all";
-  let visibleCount = 6;
-  let scrollEnabled = true;
+        // Initially hide all except the first 8
+        items.forEach((item, index) => {
+            if (index >= visibleCount) {
+                item.style.display = "none";
+            }
+        });
 
-  function filterItems() {
-    const filteredItems = [...allItems].filter(item =>
-      currentFilter === "all" || item.getAttribute("data-category") === currentFilter
-    );
-
-    // Reset all items
-    allItems.forEach(item => item.style.display = "none");
-
-    // If 'all', show with infinite scroll
-    if (currentFilter === "all") {
-      visibleCount = 6;
-      showItems(filteredItems, visibleCount);
-      scrollEnabled = true;
-    } else {
-      // Show all matching items directly
-      filteredItems.forEach(item => item.style.display = "block");
-      scrollEnabled = false;
-    }
-  }
-
-  function showItems(items, count) {
-    items.forEach((item, index) => {
-      if (index < count) {
-        item.style.display = "block";
-      }
+        document.getElementById("loadMore").addEventListener("click", function () {
+            let hiddenItems = Array.from(items).filter(item => item.style.display === "none");
+            for (let i = 0; i < 12 && i < hiddenItems.length; i++) {
+                hiddenItems[i].style.display = "block";
+            }
+            if (Array.from(items).filter(item => item.style.display === "none").length === 0) {
+                this.style.display = "none";
+            }
+        });
     });
-  }
-
-  // Load more items on scroll
-  window.addEventListener("scroll", () => {
-    if (!scrollEnabled) return;
-
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-      const filteredItems = [...allItems].filter(item =>
-        currentFilter === "all" || item.getAttribute("data-category") === currentFilter
-      );
-
-      if (visibleCount < filteredItems.length) {
-        visibleCount += 6;
-        showItems(filteredItems, visibleCount);
-      }
-    }
-  });
-
-  // Filter button click
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      currentFilter = button.getAttribute("data-filter").toLowerCase();
-      filterItems();
-    });
-  });
-
-  // Initial display
-  filterItems();
-});
 </script>
+
+
 
 
 
