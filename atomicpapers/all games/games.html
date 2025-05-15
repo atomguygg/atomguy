@@ -585,6 +585,8 @@
                         <h5 class="text-center mt-2" style="opacity: 0.8;">AC- VALHALLA- MINI</h5>
                     </div><!-- / column -->
 
+
+
                    <div class="col-md-6 col-xl-3" data-category="ac">
                         <div class="project">
                             <figure class="portfolio-item">
@@ -1573,6 +1575,9 @@
                         <h5 class="text-center mt-2" style="opacity: 0.8;">RDR #34</h5>
                     </div><!-- / column -->                    
                          
+                                        <div class="col-12 text-center mt-4">
+    <button id="loadMore" class="btn btn-primary px-5 py-2">Load More</button>
+</div>
                     
                 </div><!-- / row -->
             </div><!-- / container-fluid -->
@@ -1679,6 +1684,30 @@
       });
     });
   });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let items = document.querySelectorAll(".project-item, [data-category]");
+        let visibleCount = 8;
+
+        // Initially hide all except the first 8
+        items.forEach((item, index) => {
+            if (index >= visibleCount) {
+                item.style.display = "none";
+            }
+        });
+
+        document.getElementById("loadMore").addEventListener("click", function () {
+            let hiddenItems = Array.from(items).filter(item => item.style.display === "none");
+            for (let i = 0; i < 16 && i < hiddenItems.length; i++) {
+                hiddenItems[i].style.display = "block";
+            }
+            if (Array.from(items).filter(item => item.style.display === "none").length === 0) {
+                this.style.display = "none";
+            }
+        });
+    });
 </script>
 
 
