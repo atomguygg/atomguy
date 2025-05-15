@@ -170,6 +170,7 @@
   <button class="btn btn-outline-light filter-btn" data-filter="others">OTHERS</button>
 </div>
 
+<div id="gallery" class="row justify-content-center"></div>
 
     <div class="main-container p-0">
 
@@ -1710,6 +1711,80 @@
             }
         });
     });
+</script>
+
+<script>
+  // Loading screen
+  const loadingScreen = document.createElement('div');
+  loadingScreen.id = 'loadingScreen';
+  loadingScreen.innerText = 'Loading...';
+  document.body.appendChild(loadingScreen);
+
+  window.addEventListener('load', () => {
+    loadingScreen.style.display = 'none';
+  });
+
+  // Image data (replace with your real image data)
+  const allImages = [
+    { url: 'img1.jpg', category: 'gta' },
+    { url: 'img2.jpg', category: 'mc' },
+    { url: 'img3.jpg', category: 'ac' },
+    { url: 'img4.jpg', category: 'combo' },
+    { url: 'img5.jpg', category: 'rdr' },
+    { url: 'img6.jpg', category: 'others' },
+    // ... add your full image data
+  ];
+
+  const gallery = document.getElementById('gallery');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  let currentIndex = 0;
+  const loadCount = 12;
+  let currentFilter = 'all';
+
+  function loadImages(count) {
+    const filteredImages = currentFilter === 'all'
+      ? allImages
+      : allImages.filter(img => img.category === currentFilter);
+
+    const slice = filteredImages.slice(currentIndex, currentIndex + count);
+    slice.forEach(img => {
+      const col = document.createElement('div');
+      col.className = 'col-md-3 mb-4';
+      col.innerHTML = `<img src="${img.url}" class="img-fluid rounded shadow">`;
+      gallery.appendChild(col);
+    });
+
+    currentIndex += count;
+
+    if (currentIndex >= filteredImages.length || currentFilter !== 'all') {
+      loadMoreBtn.style.display = 'none';
+    } else {
+      loadMoreBtn.style.display = 'inline-block';
+    }
+  }
+
+  // Load initial images
+  loadImages(8);
+
+  // Load more button click
+  loadMoreBtn.addEventListener('click', () => loadImages(loadCount));
+
+  // Filter button clicks
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      currentFilter = button.getAttribute('data-filter');
+      gallery.innerHTML = '';
+      currentIndex = 0;
+
+      if (currentFilter === 'all') {
+        loadImages(8);
+      } else {
+        loadImages(allImages.length); // load all for that category at once
+      }
+    });
+  });
 </script>
 
 
