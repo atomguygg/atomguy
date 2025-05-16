@@ -18,56 +18,54 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="css/fontawesome-all.min.css" type="text/css">
 <style>
-  #loadingScreen {
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+    #loader-wrapper {
     position: fixed;
-    background: #000;
-    color: white;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-color: #000; /* or any color */
     z-index: 9999;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 2rem;
-  }
-
-  #loadingScreen {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000; /* or any background */
-    display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
+}
 
-  .loading-logo {
-    max-width: 200px;
-    animation: pulse 2s infinite ease-in-out;
-  }
+#loader {
+    text-align: center;
+}
 
-  @keyframes pulse {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.1); }
-  }
+#loader-logo {
+    width: 120px;
+    height: auto;
+    animation: pulseGlow 2s infinite;
+}
 </style>
 
 </head>
 
 <body>
-    <!-- Loading Screen -->
-<div id="loadingScreen">
-  <img src="images/ap.png" alt="images/ap.png" class="loading-logo">
+
+<div id="loader-wrapper" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;">
+    <img src="images/ap.png" alt="Loading..." style="
+        width: 100px;
+        height: auto;
+        animation: spin 2s linear infinite;" />
 </div>
-
-
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
 
     <div id="#top"></div>
 
@@ -1835,6 +1833,18 @@
     loadingScreen.style.opacity = '0';
     setTimeout(() => loadingScreen.style.display = 'none', 500); // Fade-out delay
   });
+</script>
+
+<script>
+    window.addEventListener("load", function () {
+        setTimeout(() => {
+            const loader = document.getElementById("loader-wrapper");
+            loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 50000); // match transition time
+        }, 10500); // show loader for 2.5 seconds
+    });
 </script>
 
 
