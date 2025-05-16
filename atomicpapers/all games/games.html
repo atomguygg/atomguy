@@ -60,12 +60,11 @@
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
-">
+    transition: opacity 0.5s ease;">
     <img src="images/ap.png" alt="Loading..." style="
         width: 100px;
-        animation: spin 2s linear infinite;
-    " />
+        height: auto;
+        animation: spin 2s linear infinite;" />
 </div>
 
     <div id="#top"></div>
@@ -1848,16 +1847,6 @@
     });
 </script>
 
-<script>
-    window.addEventListener("load", function () {
-        const loader = document.getElementById("loader-wrapper");
-        loader.style.opacity = "0";
-
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500); // match the CSS transition
-    });
-</script>
 
 
 
