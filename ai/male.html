@@ -77,8 +77,28 @@
     .meta p{margin:0;color:var(--muted);font-size:13px}
     .text-card{margin-top:14px;background:var(--glass);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;gap:8px}
     .text-card span{font-size:14px;line-height:1.4}
-    button.copy-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;cursor:pointer;color:var(--muted);min-width:72px;flex-shrink:0}
-    button.copy-btn:hover{color:#fff;border-color:rgba(255,255,255,0.14)}
+   button.copy-btn {
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 90px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(29, 185, 84, 0.5);
+  transition: all 0.3s ease;
+}
+button.copy-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.7);
+}
+button.copy-btn:active {
+  transform: scale(0.95);
+}
+
     .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:#0a0b0b;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:999px;color:var(--accent);box-shadow:0 6px 20px rgba(0,0,0,0.6);display:none}
     @media (max-width:520px){
       body{padding:14px}
@@ -86,62 +106,226 @@
       .text-card{flex-direction:column;align-items:flex-start}
       button.copy-btn{align-self:flex-end}
     }
-    
+    .gender-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.2);
+  padding: 18px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 140px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.gender-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.4);
+}
   </style>
 </head>
 <body>
   <header>
     <!-- Replace the src with your logo image URL -->
     <img src="atom.png" alt="Website Logo">
-    <div class="gender-buttons">
-      <button id="maleBtn">Male</button>
-      <button id="femaleBtn">Female</button>
-    </div>
+   <div class="gender-buttons">
+  <a href="male.html" class="gender-btn">Male</a>
+  <a href="female.html" class="gender-btn">Female</a>
+</div>
   </header>
 
   <div class="wrap">
-    <div class="card">
+                 <div class="card">
       <div class="image-wrap">
-        <img src="https://pbs.twimg.com/media/G0qSvAFa8AAzJ9Z?format=jpg&name=large" alt="Showcase image" />
+        <img src="https://pbs.twimg.com/media/G0jeGEzWIAA2Vfe?format=jpg&name=medium" alt="Showcase image" />
       </div>
       <div class="meta">
-        <h1>PROMPT 1</h1>
-        <p>Moody studio portrait.</p>
+        <h1>PROMPT #1</h1>
+        <p> Cinematic editorial portrait</p>
       </div>
       <div class="text-card">
-        <span id="text1">Prompt: This is a photo of me. Craft a moody studio portrait of the uploaded person, bathed in golden-orange spotlight that creates a glowing circular halo behind them on the wall. The warm light should sculpt the face and upper body with soft, sunset-like tones, while casting a strong head shadow to the right. Style the person. Her eyes are closed and chin tilted slightly up.
-</span>
-        <button class="copy-btn" data-target="text1">Copy</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="image-wrap">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="Showcase image" />
-      </div>
-      <div class="meta">
-        <h1>Showcase Image 2</h1>
-        <p>Another short subtitle describing the image.</p>
-      </div>
-      <div class="text-card">
-        <span id="text2">This is the second caption text for another image.</span>
-        <button class="copy-btn" data-target="text2">Copy</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="image-wrap">
-        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1600&auto=format&fit=crop" alt="Showcase image" />
-      </div>
-      <div class="meta">
-        <h1>Showcase Image 3</h1>
-        <p>Yet another subtitle for image 3.</p>
-      </div>
-      <div class="text-card">
-        <span id="text3">Here is the third caption text to copy.</span>
+        <span id="text3">A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). She stands tall in a dark moody studio,surrounded by soft drifting smoke under a dramatic spotlight.Outfit:Oversized slate-blue luxury suit with wide-leg trousers, paired with a slightly unbuttoned white silk shirt. Both hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly upward. </span>
         <button class="copy-btn" data-target="text3">Copy</button>
       </div>
     </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0F-r2AW0AAJZs7?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #2</h1>
+        <p> Black and white portrait</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Please generate a top-angle and close-up black and white portrait of my face, focused on the head facing forward. Use a 35mm lens look, 10.7K 4HD quality. Proud expression, waterdroplets on my face. Deep blackshadow background - only the face</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0yZZgEacAArgav?format=jpg&name=900x900" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #3</h1>
+        <p>35mm B&W portrait </p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Prompt: "Please generate a top-angle and close-up black and white portrait of my face, focused on the head facing forward. Use a 35mm lens look, 10.7K 4HD quality. Proud expression. Deep blackshadow background - only the face and the upper chest and shoulder" </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0yZ52KbcAMkb5w?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #4</h1>
+        <p>Dreamy cinematic portrait</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Dreamy cinematic portrait of a young stylish 19 years old young man standing in a tall grass field filled with soft white pampas flowers. He is wearing on all-white outfit: a white button up loose fit shirt with sleeves slightly rolied and white trousers. Pose: standing naturally body facing forward, head slightly tilted down, eye’s looking softly downward with a calm and thoughtful expression. Once hand holding a pampas flower gently in front, the other hand casually in his pocket. Background: softly blurred white pampas flower glowing in sunlight, dreamy bright atmosphere. Camera Angele: medium shot from the front at eye level and wide angle and full side frame.
+Style: cinematic, soft tones, pastel colours, bright daylight, slightly overexposed for a glowing effect, not overly sharp, film-like mood. Generet photo </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0u44-faEAAWNV3?format=jpg&name=large" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #5</h1>
+        <p>young Indian man</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Convert, 4k HD realistic, A stunning portrait of a young Indian man with hairs like mine .
+He is wearing a white and silver colour shervani with dhoti & duppta slaying down from his neck & silver watch in his hand . He is looking slightly to his right, with a soft, serene expression. I want same face as I uploaded no alternation 100 percent same. The background is a plain, warm-toned wall, illuminated by a warm light source from the right, creating a distinct, soft-edged shadow of his profile and hair on the wall behind her. The overall mood is retro and artistic. </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0wJKPPbwAArjRr?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #6</h1>
+        <p>Lounging on a couch</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">A cinematic low-light portrait of a South Asian man lounging on a couch, wearing an open button silk shirt, layered necklace. He holds a cigar in one hand and a crystal glass of whiskey in the other. Warm golden light highlights the smoke around him, while the background stays dark and moody. Expression, exuding power and calm authority. Ultra photorealistic, cinematic shadows, 8K quality.
+ </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0vY3dPbcAQL_JE?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #7</h1>
+        <p>Stunnin portrait</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Convert, 4k HD realistic, A stunning portrait of a young Indian man with usual length, dark, little wavy hair.
+The subject is in mustard yellow embroidered kurta in a warm green tone with delicate details. He is looking slightly to his right, with a soft, serene masculine expression. He is posing with a watch in his left hand. I want same face as I uploaded, no alternation, 100 percent same. The full size image. The background is a plain, warm-toned wall, illuminated by a warm light source from the right, creating a distinct, soft-edged shadow of his profile and hair on the wall behind him. The overall mood is retro and artistic </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0vu_nibcAAeKI3?format=jpg&name=large" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #8</h1>
+        <p>vertical portrait</p>
+      </div>
+      <div class="text-card">
+        <span id="text3"> A high-resolution, cinematic, and photorealistic close-up profile tall vertical portrait of a man. The image features dramatic split-lighting with a vibrant, glowing red light illuminating the top of his face and a contrasting, </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0vA_a6bEAAcSUw?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #9</h1>
+        <p>editorial studio portrait </p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Prompt :  Generate a hyper-realistic cinematic editorial studio portrait of the uploaded person (preserve the exact real face, hairstyle, skin tone, and body identity no changes
+Scene: dark luxury studio with thick drifting smoke, adding dramatic layers and depth.
+Lighting: top-left spotlight cutting through haze, creating strong highlights and deep cinematic shadows across the
+1,340
+2,366
+frame.
+Composition: show two versions of the same person in the same frame.
+5
+325
+ 1. One leaning casually against a tall black studio cube with arms crossed, looking slightly off-camera with confidence.
+2. The other seated forward on a stool with elbows on knees, hands clasped, gazing directly at the camera with
+intensity
+Outfit both wear the same sharp floor shadows, and layered contrast.
+Ratio: 9:16 vertical </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+                     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0xr8yCaEAACbd2?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #10</h1>
+        <p>stylish young man</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">A stylish young man, looking thoughtful, with warm, dramatic lighting creating strong shadows on a textured background. He’s wearing a slightly unbuttoned collared shirt and tailored trousers, with a single red rose tucked into </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+           <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0VcaeOaYAAIyZQ?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #11</h1>
+        <p>rain-covered window</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Cinematic headshot of me behind a rain-covered window at night. Reflections and raindrops partially obscure my face, but my expression is still visible. Cool lighting, moody atmosphere, 4:3 portrait framing. Emphasize emotion and visual storytelling.
+ </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+
+   <!--                  <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0ySz4ZbcAM15Je?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #12</h1>
+        <p>Serene expression</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">is </span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+  -->
+
   </div>
 
   <div class="toast" id="toast">Copied ✓</div>

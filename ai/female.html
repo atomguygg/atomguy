@@ -106,17 +106,35 @@ button.copy-btn:active {
       .text-card{flex-direction:column;align-items:flex-start}
       button.copy-btn{align-self:flex-end}
     }
-    
+    .gender-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.2);
+  padding: 18px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 140px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.gender-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.4);
+}
   </style>
 </head>
 <body>
   <header>
     <!-- Replace the src with your logo image URL -->
     <img src="atom.png" alt="Website Logo">
-    <div class="gender-buttons">
-      <button id="maleBtn">Male</button>
-      <button id="femaleBtn">Female</button>
-    </div>
+   <div class="gender-buttons">
+  <a href="male.html" class="gender-btn">Male</a>
+  <a href="female.html" class="gender-btn">Female</a>
+</div>
   </header>
 
   <div class="wrap">
