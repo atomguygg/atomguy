@@ -77,8 +77,28 @@
     .meta p{margin:0;color:var(--muted);font-size:13px}
     .text-card{margin-top:14px;background:var(--glass);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;gap:8px}
     .text-card span{font-size:14px;line-height:1.4}
-    button.copy-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;cursor:pointer;color:var(--muted);min-width:72px;flex-shrink:0}
-    button.copy-btn:hover{color:#fff;border-color:rgba(255,255,255,0.14)}
+   button.copy-btn {
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 90px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(29, 185, 84, 0.5);
+  transition: all 0.3s ease;
+}
+button.copy-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.7);
+}
+button.copy-btn:active {
+  transform: scale(0.95);
+}
+
     .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:#0a0b0b;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:999px;color:var(--accent);box-shadow:0 6px 20px rgba(0,0,0,0.6);display:none}
     @media (max-width:520px){
       body{padding:14px}
@@ -105,30 +125,130 @@
         <img src="https://pbs.twimg.com/media/G0qSvAFa8AAzJ9Z?format=jpg&name=large" alt="Showcase image" />
       </div>
       <div class="meta">
-        <h1>Showcase Image 1</h1>
-        <p>A short subtitle describing the image.</p>
+        <h1>PROMPT #1</h1>
+        <p>Moody studio portrait.</p>
       </div>
       <div class="text-card">
-        <span id="text1">This is the first caption text. Tap the copy button to copy this text to clipboard.</span>
+        <span id="text1">Prompt: This is a photo of me. Craft a moody studio portrait of the uploaded person, bathed in golden-orange spotlight that creates a glowing circular halo behind them on the wall. The warm light should sculpt the face and upper body with soft, sunset-like tones, while casting a strong head shadow to the right. Style the person. Her eyes are closed and chin tilted slightly up.</span>
         <button class="copy-btn" data-target="text1">Copy</button>
       </div>
     </div>
 
     <div class="card">
       <div class="image-wrap">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="Showcase image" />
+        <img src="https://pbs.twimg.com/media/G0tejb1aQAAsn7n?format=jpg&name=large" alt="Showcase image" />
       </div>
       <div class="meta">
-        <h1>Showcase Image 2</h1>
-        <p>Another short subtitle describing the image.</p>
+        <h1>PROMPT #2</h1>
+        <p>saree </p>
       </div>
       <div class="text-card">
-        <span id="text2">This is the second caption text for another image.</span>
+        <span id="text2">Convert, 4k HD realistic, A stunning portrait of a young Indian woman with long, dark, wavy hair cascading over her shoulders. She is wearing a translucent, elegant red saree draped over one shoulder, revealing a fitted blouse underneath. White flowers are tucked behind her right ear. She is looking slightly to her right, with a soft, serene expression. I want same face as I uploaded no alternation 100 percent same.
+The background is a plain, warm-toned
+wall, illuminated by a warm light source from the right, creating a distinct, soft-edged shadow of her profile and hair on the wall behind her. The overall mood is retro and artistic!</span>
         <button class="copy-btn" data-target="text2">Copy</button>
       </div>
     </div>
 
     <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0tejcAbcAIOk1t?format=jpg&name=large" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #3</h1>
+        <p>Saree</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Create a retro vintage grainy but bright image of the reference picture but draped in a perfect plain chiffon saree yellow color Pinteresty aesthetic retro saree. It must feel like a 90s movie dark brown wavy curly hair with a small flower tucked visibly into her curls and romanticising windy environment. The girl is standing against a solid wall deep shadows and contrast drama, creating a mysterious and artistic atmosphere where the lighting is warm with a golden tones of evoking a sunset or golden hour glow. The background is minimalist and slightly textured the expression on her face is moody, calm yet happy and introspective.</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+        <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0tejcDaIAExsSE?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #4</h1>
+        <p>Saree.</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Create a retro, vintage-inspired image - grainy yet bright - based on the reference picture. The girl should be draped in a perfect purple chiffon, Pinterest-style aesthetic saree. The vibe must capture the essence of a 90s movie dark-brown-haired baddie, with silky hair and a small flower tucked visibly into her hair, enhanced by a windy, romantic atmosphere. She is standing against an old wooden door, where deep shadows and dramatic contrasts add mystery and artistry to the scene, creating a moody yet enchanting cinematic effect. Her pose should suggest that she is adjusting her hair.
+</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+        <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0tejcCaMAA6_nv?format=jpg&name=medium" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #5</h1>
+        <p>Saree</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Convert it in a retro vintage grainy but bright image of the reference picture keep the facial features same but trapped in a perfect plane banarsi saree Pinterest retro saree it must feel like a 90s movie dark brown silky shiny hair with a small flower tucked visibly into her silky hairs romanticising the girl is in standing in front of a white wall having a d Arc shadow shining a golden light on a face operating a moisture artistic atmosphere where the lightning is warm with the golden tones of working sunset or golden are glow the background is minimalist and slightly take sure the expression on her facial as Modi clamp yet happy and make it in a HD quality same face not you can change the colour and hair.</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+        <div class="card">
+      <div class="image-wrap">
+        <img src="https://pbs.twimg.com/media/G0o4waVakAA9hyP?format=jpg&name=large" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>PROMPT #6</h1>
+        <p>Editorial studio portrait</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Prompt :  Generate a hyper-realistic cinematic editorial studio portrait of the uploaded person (preserve the exact real face, hairstyle, skin tone, and body identity no changes
+Scene: dark luxury studio with thick drifting smoke, adding dramatic layers and depth.
+Lighting: top-left spotlight cutting through haze, creating strong highlights and deep cinematic shadows across the
+1,340
+2,366
+frame.
+Composition: show two versions of the same person in the same frame.
+5
+325
+ 1. One leaning casually against a tall black studio cube with arms crossed, looking slightly off-camera with confidence.
+2. The other seated forward on a stool with elbows on knees, hands clasped, gazing directly at the camera with
+intensity
+Outfit both wear the same sharp floor shadows, and layered contrast.
+Ratio: 9:16 vertical</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+        <div class="card">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1600&auto=format&fit=crop" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>Showcase Image 3</h1>
+        <p>Yet another subtitle for image 3.</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Here is the third caption text to copy.</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+        <div class="card">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1600&auto=format&fit=crop" alt="Showcase image" />
+      </div>
+      <div class="meta">
+        <h1>Showcase Image 3</h1>
+        <p>Yet another subtitle for image 3.</p>
+      </div>
+      <div class="text-card">
+        <span id="text3">Here is the third caption text to copy.</span>
+        <button class="copy-btn" data-target="text3">Copy</button>
+      </div>
+    </div>
+
+        <div class="card">
       <div class="image-wrap">
         <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1600&auto=format&fit=crop" alt="Showcase image" />
       </div>
