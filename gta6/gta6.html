@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
   <link rel="icon" href="files/gta6.png" type="image/png">
-
-
-  <meta name="description" content=" Get ready for the biggest release in gaming history! This is the ultimate GTA 6 Countdown website — track the exact time left until Grand Theft Auto VI drops on May 26, 2026. Featuring a slick Miami-inspired vibe, live countdown timer, and immersive design.Created with passion by Atom, a true GTA fan, for gamers worldwide. Stay hyped, stay updated!">
+  <meta name="description" content="Get ready for the biggest release in gaming history! This is the ultimate GTA 6 Countdown website — track the exact time left until Grand Theft Auto VI drops on November 19, 2026. Featuring a slick Miami-inspired vibe, live countdown timer, and immersive design. Created with passion by Atom, a true GTA fan, for gamers worldwide. Stay hyped, stay updated!">
   <meta charset="UTF-8">
   <title>GTA 6 COUNTDOWN - ATOM GUY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,19 +12,18 @@
     }
 
     body {
-      background: linear-gradient(135deg, #4d0c69, #1e1e1e); /* Neon gradient without pink */
+      background: linear-gradient(135deg, #4d0c69, #1e1e1e);
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       margin: 0;
       overflow-x: hidden;
-     overflow-y: auto;
+      overflow-y: auto;
       background-size: cover;
       background-attachment: fixed;
       position: relative;
     }
 
-    /* Splash screen styles */
     #splash {
       position: fixed;
       background: #000;
@@ -38,7 +35,7 @@
     }
 
     #splash img {
-      max-width: 80%; /* Adjusted for responsiveness */
+      max-width: 80%;
       max-height: 300px;
       animation: fadeSplash 2s ease-in-out forwards;
       animation-delay: 2s;
@@ -59,7 +56,7 @@
       height: 100vh;
       opacity: 0;
       animation: fadeInSlow 2s ease-in-out forwards;
-      padding: 20px; /* Added padding for smaller screens */
+      padding: 20px;
     }
 
     @keyframes fadeInSlow {
@@ -69,7 +66,7 @@
     }
 
     img.logo {
-      max-width: 100%; /* Ensures the logo is responsive */
+      max-width: 100%;
       width: 300px;
       margin-bottom: 1.5rem;
     }
@@ -79,7 +76,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Updated release date style without neon effect */
     .release-date {
       font-size: 1.5rem;
       font-weight: bold;
@@ -127,7 +123,6 @@
       color: #ff66cc;
     }
 
-    /* Background Palm Tree & City Vibe */
     .background-image {
       position: absolute;
       top: 0;
@@ -139,7 +134,6 @@
       z-index: -1;
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -150,7 +144,7 @@
       }
 
       .countdown {
-        gap: 1.5rem; /* Reduced gap for smaller screens */
+        gap: 1.5rem;
       }
 
       .time-box {
@@ -215,21 +209,18 @@
 </head>
 <body>
 
-  <!-- Background Miami Vibe -->
   <div class="background-image"></div>
 
-  <!-- Splash screen -->
   <div id="splash">
     <img src="files/gta6.png" alt="GTA 6 Logo">
   </div>
 
-  <!-- Main content -->
   <div id="main-content">
     <img class="logo" src="files/gta6.png" alt="GTA 6 Logo">
     <h1>Live Countdown to GTA 6 Release</h1>
 
-    <!-- Release Date without neon effect -->
-    <div class="release-date">Release Date: May 26, 2026</div>
+    <!-- Updated Release Date -->
+    <div class="release-date">Release Date: November 19, 2026</div>
 
     <div class="countdown" id="countdown">
       <div class="time-box"><div id="days">0</div><span>Days</span></div>
@@ -249,9 +240,9 @@
       }, 2500);
     });
 
-    // Countdown logic
+    // Countdown logic - Updated to November 19, 2026
     const countdown = () => {
-      const releaseDate = new Date("May 26, 2026 00:00:00").getTime();
+      const releaseDate = new Date("November 19, 2026 00:00:00").getTime();
       const now = new Date().getTime();
       const diff = releaseDate - now;
 
